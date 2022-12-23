@@ -6,6 +6,13 @@ import { createGuild, deleteGuild, getGuild, updateGuild } from './routes/guild'
 import { createGuildChannel, createInvite, getGuildChannels, useInvite } from './routes/guild/channels';
 import { createUserEndpoint, deleteUserEndpoint, getUserTokenEndpoint, getUsersMe, patchUsersMe } from './routes/users';
 
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 export const config = createConfig({
     server: {
         listen: 3000,

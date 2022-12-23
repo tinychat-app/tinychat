@@ -21,7 +21,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "yarn build --watch --onSuccess \"yarn start\"",
-    "start": "node  --enable-source-maps ./dist/index.cjs",
+    "start": "node  --enable-source-maps ./dist/index.js",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write src"
 

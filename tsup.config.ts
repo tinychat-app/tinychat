@@ -1,7 +1,11 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
-    entryPoints: ['src'],
-    format: ['cjs'],
+    entryPoints: ['src/index.ts'],
+    format: ['esm'],
     sourcemap: true,
+    splitting: false,
+    esbuildOptions: (options) => {
+        options.packages = "external"
+    }
 });
