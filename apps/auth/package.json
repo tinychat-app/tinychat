@@ -1,0 +1,29 @@
+{
+  "name": "auth",
+  "description": "The Authenticator",
+  "version": "0.1.0",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "redis": "^4.2.0",
+    "zod": "^3.20.2",
+    "shared": "*",
+    "mongoose": "^6.5.1"
+
+  },
+  "devDependencies": {
+    "tsconfig": "*"
+
+  },
+  "license": "MIT",
+  "main": "dist/index.cjs",
+  "private": true,
+  "scripts": {
+    "build": "tsup",
+    "dev": "yarn build --watch --onSuccess \"yarn start\"",
+    "start": "node --enable-source-maps dist/index.cjs",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write src"
+
+  },
+  "type": "module"
+}

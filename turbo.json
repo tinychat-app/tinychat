@@ -3,12 +3,20 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**"],
+      "inputs": ["src/**/*.ts", "tsconfig.json", "packages/tsconfig/**.json"]
+    },
+    "start": {
+      "cache": false
     },
     "lint": {
-      "outputs": []
+      "inputs": ["src/**/*.ts", "packages/*/src/**/*.ts", ".eslintrc.json"]
+    },
+    "format": {
+      "inputs": ["src/**/*.ts", "packages/*/src/**/*.ts", ".eslintrc.json"]
     },
     "dev": {
+      "dependsOn": ["^dev"],
       "cache": false
     }
   }
